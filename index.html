@@ -1,62 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Free Wi-Fi</title>
+    <title>Free Wi-Fi Access</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
         font-family: sans-serif;
-        background-color: #f9f9f9;
+        background: #f0f0f0;
         text-align: center;
         padding-top: 100px;
       }
       h1 {
         font-size: 2em;
-        margin-bottom: 20px;
       }
-      button {
-        font-size: 18px;
-        padding: 12px 24px;
+      a.download-button {
+        display: inline-block;
         margin-top: 20px;
-        background-color: #2196f3;
+        padding: 15px 30px;
+        background-color: #4CAF50;
         color: white;
-        border: none;
+        text-decoration: none;
+        font-size: 18px;
         border-radius: 8px;
-        cursor: pointer;
       }
-      button:hover {
-        background-color: #1976d2;
+      a.download-button:hover {
+        background-color: #45a049;
       }
     </style>
   </head>
   <body>
-    <h1>Welcome to Free Wi-Fi</h1>
-    <p>Tap below to download our app and continue.</p>
+    <h1>____</h1>
+    <p>_________?</p>
 
-    <button onclick="downloadAPK()">Download APK</button>
-
-    <script>
-      function downloadAPK() {
-        const apkUrl = "https://raw.githubusercontent.com/DeployedCartridge/ReasonablyFriedComputer/main/release/file.apk";
-
-        fetch(apkUrl)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error("Failed to fetch APK");
-            }
-            return response.blob();
-          })
-          .then(blob => {
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "file.apk";
-            link.click();
-          })
-          .catch(error => {
-            alert("Error downloading APK: " + error.message);
-          });
-      }
-    </script>
+    <!-- This forces a real download -->
+    <a class="download-button"
+       href="https://raw.githubusercontent.com/DeployedCartridge/ReasonablyFriedComputer/main/release/file.apk"
+       download>
+      Download APK
+    </a>
   </body>
 </html>
